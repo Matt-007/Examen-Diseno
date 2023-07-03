@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario Dota 2</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="js/main.js"></script>
+  
+</head>
+<body>
+     <!-- Header -->
+ <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo">
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="./index.html">Pantalla Principal</a></li>
+        <li><a href="./inicio.html">Inicio</a></li>
+        <li><a href="./noticias.html">Noticias</a></li>
+        <li><a href="./actualizaciones.html">Actualizaciones</a></li>
+        <li><a href="./e-sports.html">E-Sports</a></li>
+        <li><a href="./formulario.html">Formulario</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+  <h2>Formulario Dota 2</h2>
+  <form id="dotaForm" class="formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad" name="edad" required>
+    <br>
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+    <br>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+    <br>
+
+    <button type="submit" id="enviarBtn">Enviar</button>
+  </form>
+<!-- Modal -->
+
+<h2>Top 3 jugadores de Dota 2 más pagados</h2>
+
+<button id="modalBtn1">Abrir Modal 1</button>
+<button id="modalBtn2">Abrir Modal 2</button>
+<button id="modalBtn3">Abrir Modal 3</button>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>N0tail</h3>
+    <p>El danés es probablemente uno de los jugadores más influyentes de toda la escena, sino el que más.
+       Fue el fundador de OG antes de la llegada de Red Bull,
+       y ha conseguido traer a la organización a muchos de los mejores jugadores de los últimos años.
+      Con 27 y años y desde 2015 en OG, N0tail ha ganado cuatro Majors: Frankfurt 2015, Boston y Manila 2016 y Kiev 2017,
+       además de la ESL One Frankfurt de 2016. Esto, junto a los dos The International (el último repartió 3 millones para cada jugador del club) 
+      hacen de él el jugador con una mayor ganancia en la historia, con 6.9 millones de dólares.</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>JerAx</h3>
+    <p>El jugador finlandés es, hasta la fecha, el único de esta lista que no podrá seguir acumulando dinero para su palmarés personal. 
+      Su retirada en enero del año pasado nos dejó sin uno de los mejores jugadores de los últimos tiempos en Dota 2.
+      El jugador de 29 años fue el primer jugador en alcanzar cuatro finales de Major consecutivas: Shanghai, Manila, Boston y Kiev. 
+      De estas cuatro, consiguió ganar el de Kiev y el de Boston. Además, al igual que el resto de sus compañeros en OG, 
+      se retira con dos TI bajo el brazo. 
+      Una carrera de victorias entre Liquid y OG que termina con 6.4 millones de dólares totales tan solo en premios.</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Ana</h3>
+    <p>El australiano es a sus 21 años el jugador más joven de toda la lista. Lleva en OG desde 2016, 
+      aunque tuvo una pequeña salida a Team World. Aún así, ha conseguido hacerse con premios suculentos procedentes de varios torneos: 
+      2º Dota 2 Asia Champ. 2017 (91k) o Dota Pit League Season 5 (35k). El jugador es una gran figura en su país, 
+      producto de ser el primer australiano en ganar un torneo de Valve. 
+      Es el primer jugador del top 10 en pasar la barrera de los 6 millones de dólares, aunque sea por unos miles de euros.
+    </p>
+  </div>
+</div>
+ 
+<script>
+  
+  // Obtener los elementos del DOM
+  var modalBtn1 = document.getElementById("modalBtn1");
+  var modalBtn2 = document.getElementById("modalBtn2");
+  var modalBtn3 = document.getElementById("modalBtn3");
+  
+  var modal1 = document.getElementById("modal1");
+  var modal2 = document.getElementById("modal2");
+  var modal3 = document.getElementById("modal3");
+  
+  var closeBtns = document.getElementsByClassName("close");
+  
+  // Función para abrir el modal
+  function openModal(modal) {
+    modal.style.display = "block";
+  }
+  
+  // Función para cerrar el modal
+  function closeModal(modal) {
+    modal.style.display = "none";
+  }
+  
+  // Asignar eventos de clic a los botones y botones de cierre
+  modalBtn1.addEventListener("click", function() {
+    openModal(modal1);
+  });
+  
+  modalBtn2.addEventListener("click", function() {
+    openModal(modal2);
+  });
+  
+  modalBtn3.addEventListener("click", function() {
+    openModal(modal3);
+  });
+  
+  for (var i = 0; i < closeBtns.length; i++) {
+    closeBtns[i].addEventListener("click", function() {
+      var modal = this.parentNode.parentNode;
+      closeModal(modal);
+    });
+  }
+  </script>
+</body>
+</html>
